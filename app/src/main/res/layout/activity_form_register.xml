@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/formRegistro"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000"
+        android:ems="14"
+        android:hint="Name"
+        android:paddingVertical="15dp"
+        android:textColor="#000"
+        android:layout_marginTop="40dp"
+        android:textColorHint="#FF008577"
+        android:textColorLink="#000" />
+
+    <EditText
+        android:id="@+id/txtUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#000"
+        android:ems="14"
+        android:hint="Email"
+        android:inputType="text"
+        android:paddingVertical="15dp"
+        android:textColor="#000"
+        android:textColorHint="#FF008577"
+        android:textColorLink="#000" />
+
+
+    <EditText
+        android:id="@+id/txtPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#000"
+        android:ems="14"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingVertical="15dp"
+        android:textColor="#000"
+        android:textColorHint="#FF008577"
+        android:textColorLink="#000" />
+
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="5dp"
+        android:layout_marginTop="30dp"
+       />
+
+</LinearLayout>

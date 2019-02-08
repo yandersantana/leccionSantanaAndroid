@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/formRegistro"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:gravity="center">
+
+
+    <TextView
+        android:id="@+id/txtsuma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="5+6"
+        android:textSize="30sp" />
+
+
+    <EditText
+        android:id="@+id/txtrespuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#000"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:ems="14"
+        android:textAlignment="center"
+        android:hint="ingrese la respuesta"
+        android:textColor="#000"
+        android:textColorHint="#FF008577"
+        android:textColorLink="#000"
+        android:paddingVertical="25dp"/>
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="122dp" />
+
+
+
+
+
+</LinearLayout>
