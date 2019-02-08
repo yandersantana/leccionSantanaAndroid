@@ -39,7 +39,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
-
+import android.os.Vibrator;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private static final String TAG = "AsyncTaskActivity";
@@ -55,9 +55,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public TextView txtrespuesta;
     public String respuesta2;
     private MediaPlayer mediaplayer;
+    private MediaPlayer mediaplayer2;
     public int contador=0;
     public int rcorrecto=0;
     public int rincorrecto=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +67,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         //Inicializamos la clase MediaPlayer asociandole el fichero de Audio
-        mediaplayer = MediaPlayer.create(this, R.raw.audio);
+        mediaplayer = MediaPlayer.create(this, R.raw.pacman);
+        mediaplayer2 = MediaPlayer.create(this, R.raw.pacman);
 
         //Obtenemos los tres botones de la interfaz
         btnHilo= (Button)findViewById(R.id.btnCalcular);
@@ -93,21 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG, "recibi"+txtrespuesta.getText());
                 //Iniciamos el audio
                 if(respuesta2.equals("11")){
-                    /*NotificationCompat.Builder mBuilder;
-                    NotificationManager mNotifyMgr =(NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
 
-                    int icono = R.mipmap.ic_launcher;
-                   // Intent i=new Intent(MainActivity.this, MensajeActivity.class);
-                   // PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 0, i, 0);
-
-                    mBuilder =new NotificationCompat.Builder(getApplicationContext())
-                            .setSmallIcon(icono)
-                            .setContentTitle("Titulo")
-                            .setContentText("Correcto")
-                            .setVibrate(new long[] {100, 250, 100, 500})
-                            .setAutoCancel(true);
-                  mBuilder.build();*/
-
+                    
                     Toast toast1 =
                             Toast.makeText(getApplicationContext(),
                                     "Correcto", Toast.LENGTH_SHORT);
@@ -121,10 +111,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast toast1 =
                             Toast.makeText(getApplicationContext(),
                                     "Incorrecto", Toast.LENGTH_SHORT);
-
                     toast1.show();
                     contador++;
                     rincorrecto++;
+                    //mediaplayer2.start();
+                    Vibrator var = (Vibrator) getSystemService(this.VIBRATOR_SERVICE);
+
+// Vibrate for 400 milliseconds
+                    var.vibrate(400);
                 }
                 Log.d(TAG, "ESTOY CONTANDO"+contador);
 
@@ -148,6 +142,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;*/
         }
+    }
+
+
+
+    private Notification getDefaultNotification(Notification.Builder builder) {
+        builder
+
+                .setTicker("Optional ticker")
+                .setWhen(System.currentTimeMillis())
+                .setContentTitle("Default notification")
+                .setContentText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+                .setContentInfo("Info")
+               ;
+
+        //return builder.build(); //A partir de Jelly Bean se usa éste método-
+        return builder.getNotification();
     }
 
 
